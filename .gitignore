@@ -1,0 +1,44 @@
+# Module build output
+output/
+build/
+release/
+
+# Dependency directories
+lib/
+modules/
+
+# Test results
+testResults/
+TestResults/
+*.nunit.xml
+coverage.xml
+codeCoverage/
+
+# PSScriptAnalyzer
+PSScriptAnalyzerResults.xml
+
+# Pester
+*.Tests.ps1.результат
+
+# Editor files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.bak
+
+# NuGet
+*.nupkg
+nuget.exe
