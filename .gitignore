@@ -39,6 +39,13 @@ Desktop.ini
 *.log
 *.bak
 
+# WinSCP binaries
+WinSCP/
+
 # NuGet
 *.nupkg
 nuget.exe
+
+# Credentials
+*.credential
+*.cred
