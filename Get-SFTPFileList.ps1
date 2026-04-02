@@ -17,16 +17,18 @@ param(
     [int]$PortNumber = 22
 )
 
+Write-Host "PSScriptRoot is $PSScriptRoot"
+
 # ── Load WinSCP .NET assembly ────────────────────────────────────────
 $dllPath = $null
 $searchPaths = @(
-    "$PSScriptRoot\WinSCP\netstandard2.0\WinSCPnet.dll"
-    "$PSScriptRoot\WinSCP\net40\WinSCPnet.dll"
+    #"$PSScriptRoot\WinSCP\netstandard2.0\WinSCPnet.dll"
+    #"$PSScriptRoot\WinSCP\net40\WinSCPnet.dll"
     "$PSScriptRoot\WinSCP\WinSCPnet.dll"
-    "$PSScriptRoot\lib\WinSCPnet.dll"
-    "$PSScriptRoot\WinSCPnet.dll"
-    "${env:ProgramFiles}\WinSCP\WinSCPnet.dll"
-    "${env:ProgramFiles(x86)}\WinSCP\WinSCPnet.dll"
+    #"$PSScriptRoot\lib\WinSCPnet.dll"
+    #"$PSScriptRoot\WinSCPnet.dll"
+    #"${env:ProgramFiles}\WinSCP\WinSCPnet.dll"
+    #"${env:ProgramFiles(x86)}\WinSCP\WinSCPnet.dll"
 )
 foreach ($path in $searchPaths) {
     if (Test-Path $path) {
@@ -38,6 +40,8 @@ if (-not $dllPath) {
     throw "WinSCPnet.dll not found. Place it under .\WinSCP\ or install WinSCP."
 }
 Add-Type -Path $dllPath
+
+Write-Host "Loaded WinSCP assembly from $dllPath"
 # ─────────────────────────────────────────────────────────────────────
 
 # ── Connect and list matching files ──────────────────────────────────

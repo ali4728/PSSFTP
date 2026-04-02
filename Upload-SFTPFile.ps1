@@ -21,13 +21,7 @@ param(
 # ── Load WinSCP .NET assembly ────────────────────────────────────────
 $dllPath = $null
 $searchPaths = @(
-    "$PSScriptRoot\WinSCP\netstandard2.0\WinSCPnet.dll"
-    "$PSScriptRoot\WinSCP\net40\WinSCPnet.dll"
     "$PSScriptRoot\WinSCP\WinSCPnet.dll"
-    "$PSScriptRoot\lib\WinSCPnet.dll"
-    "$PSScriptRoot\WinSCPnet.dll"
-    "${env:ProgramFiles}\WinSCP\WinSCPnet.dll"
-    "${env:ProgramFiles(x86)}\WinSCP\WinSCPnet.dll"
 )
 foreach ($path in $searchPaths) {
     if (Test-Path $path) {
